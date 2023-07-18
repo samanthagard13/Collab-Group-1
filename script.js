@@ -1,10 +1,7 @@
 var citySearchEl = $('#citySearchText');
 var movieSearchEl = $('#movieSearchText');
-<<<<<<< Updated upstream
-=======
 var cityInput = citySearchEl.val();
 var movieInput = movieSearchEl.val();
->>>>>>> Stashed changes
 var buttons = [];
 var para = document.createElement('p');
 
@@ -113,8 +110,6 @@ function saveButtonsToLocalStorage (){
     localStorage.setItem('buttons', JSON.stringify(buttons));
 };
 
-<<<<<<< Updated upstream
-=======
 function theaterTimes() {
     var theaterTimesUrl = `https://serpapi.com/search.json?q=eternals+theater&location=${cityInput}+United+States&movie+name=${movieInput}&hl=en&gl=us&api_key=7c6118fdb3f3089d85b5fb869874edfac11e803bd3520e4f5d117c1a8a2e641e`;
     var theaterContainer = $('#search-results');
@@ -129,7 +124,6 @@ function theaterTimes() {
         };
 };
 
->>>>>>> Stashed changes
 document.querySelector('form').addEventListener('submit', searchSubmit);
 
 defaultPoster();
