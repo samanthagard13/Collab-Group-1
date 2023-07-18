@@ -1,13 +1,103 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-</body>
+<!DOCTYPE html>
+<html class="bg-red-950">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet"></link>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+    <!-- <style type="text/tailwindcss">
+      @layer utilities {
+        .html {
+          
+        }
+        .movie-container {
+         margin: "my-20 m-[50px]"
+         
+        }
+      }
+    </style> -->
+
+    <link href="./main.css/style.css" rel="stylesheet" />
+    <title>Movie Barf</title>
+  </head>
+
+  <body class="font-Lato font-light font-bold">
+    <div>
+      <div class="py-lg-6 prose text-3xl">
+        <h1 class="text-white text-right">Movie Barf</h1>
+      </div>
+
+      <div id="form-container "class= "py-20 my-20 m-[50px]">
+        <form>
+          <div id="city-search" class="">
+            <label class="text-white text-2xl" for="city">City</label><br />
+            <input id="citySearchText" type="text" class="form-input" placeholder="Enter Your City"/>
+            <br />
+          </div>
+
+          <div id="movie-name" class="">
+            <label class="text-white text-2xl" for="movie">Movie</label><br />
+            <input id="movieSearchText" type="text" class="form-input" placeholder="Enter Movie Name"/>
+          </div>
+
+          <div class="">
+            
+              <button class="btn border-2 rounded-full px-0 bg-white text-2xl" 
+              id="search-btn" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      
+        <div id="history">
+
+        </div>
+        <div class="">
+          <div class="space-y-20 flex flex-col items-center">
+            <div id="movieContainer" class="bg-white">
+              <div id="news-display"> insert me cards here </div>
+              <ul>
+              <!-- news display rendered here -->
+              </ul>
+            </div>
+
+            <div class="flex flex-col items-center">
+              <div class="">
+              <div class="bg-white whitespace-pre-line" id="search-results"> insert me cards here</div>
+              <ul>
+              <!-- search reults rendered here -->
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
 </html>
+
+
+<!-- side Notes -->
+
+<!-- origin line 48 -->
+<!-- <div class="py-6 ">
+  <div id="card" class="bg-white">
+    <div id="news-display"> insert me cards here</div>
+  </div> -->
+
+<!-- origin line 56 -->
+<!-- <div class="flex flex-col gap-12">
+  <div class="grid-cols-3">
+    <div class="card-1 bg-white" id="search-results"> insert me cards here</div>
+  </div> -->
+
+
+
+
+<!-- spacing -->
+
+  <!-- space-y-12 = flex flex-col gap-12 -->
+
+  <!-- line : syntax div class= "flex flex-col items-center" -->
+  <!-- line : added whitespace-pre-line to wrap text -->
