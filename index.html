@@ -4,49 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet"></link>
+
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
-    <style type="text/tailwindcss">
+    <!-- <style type="text/tailwindcss">
       @layer utilities {
+        .html {
+          
+        }
         .movie-container {
          margin: "my-20 m-[50px]"
          
         }
       }
-    </style>
+    </style> -->
 
     <link href="./main.css/style.css" rel="stylesheet" />
     <title>Movie Barf</title>
   </head>
 
-  <body>
+  <body class="font-Lato font-light font-bold">
     <div>
       <div class="py-lg-6 prose text-3xl">
         <h1 class="text-white text-right">Movie Barf</h1>
       </div>
 
-      <div class="movie-container py-20">
-        <div class="row">
+      <div id="form-container "class= "py-20 my-20 m-[50px]">
+        <form>
           <div id="city-search" class="">
             <label class="text-white text-2xl" for="city">City</label><br />
-            <input id="city" type="text" class="form-input" placeholder="Enter Your City"/>
+            <input id="citySearchText" type="text" class="form-input" placeholder="Enter Your City"/>
             <br />
           </div>
 
           <div id="movie-name" class="">
             <label class="text-white text-2xl" for="movie">Movie</label><br />
-            <input id="movie" type="text" class="form-input" placeholder="Enter Movie Name"/>
+            <input id="movieSearchText" type="text" class="form-input" placeholder="Enter Movie Name"/>
           </div>
 
           <div class="">
-            <button class="btn border-2 rounded-full px-0 bg-white text-2xl" 
-            id="search-btn">Search</button>
+            
+              <button class="btn border-2 rounded-full px-0 bg-white text-2xl" 
+              id="search-btn" type="submit">Search</button>
+            </form>
           </div>
         </div>
       
+        <div id="history">
 
-        <div class="m-[20px]">
-          <div class=" space-y-20 flex flex-col items-center">
-            <div id="card" class="bg-white">
+        </div>
+        <div class="">
+          <div class="space-y-20 flex flex-col items-center">
+            <div id="movieContainer" class="bg-white">
               <div id="news-display"> insert me cards here </div>
               <ul>
               <!-- news display rendered here -->
@@ -55,7 +64,7 @@
 
             <div class="flex flex-col items-center">
               <div class="">
-              <div id= "card-1" class=" bg-white whitespace-pre-line" id="search-results"> insert me cards here</div>
+              <div class="bg-white whitespace-pre-line" id="search-results"> insert me cards here</div>
               <ul>
               <!-- search reults rendered here -->
               </ul>
