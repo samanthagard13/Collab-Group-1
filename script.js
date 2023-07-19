@@ -1,12 +1,10 @@
 var citySearchEl = $('#citySearchText');
 var movieSearchEl = $('#movieSearchText');
-<<<<<<< Updated upstream
-=======
 var cityInput = citySearchEl.val();
 var movieInput = movieSearchEl.val();
->>>>>>> Stashed changes
 var buttons = [];
 var para = document.createElement('p');
+
 
 $(document).ready(function() {
 
@@ -27,38 +25,50 @@ $(document).ready(function() {
 //   organic_results = search.get_hash[:organic_results]
 
 // Default Poster fetch request API call using SerpAPI 
-function defaultPoster () {
-    var defaultPosterURL = 'https://serpapi.com/search.html?engine=google&q=movies+in+theater&google_domain=google.com&gl=us&hl=en&api_key=7c6118fdb3f3089d85b5fb869874edfac11e803bd3520e4f5d117c1a8a2e641e';
-    var movieContainer = document.getElementById('movieContainer');
 
-    fetch(defaultPosterURL)
-      .then(function (response) {
+function getNowPlayingMovies() {
+    var nowPlayingURL = 'https://api.themoviedb.org/3/movie/now_playing?api_key=3d41be2de60c62ec063c22571cdc0634';
+    var apiKey = '3d41be2de60c62ec063c22571cdc0634';
+
+    fetch (nowPlayingURL, {
+        headers: {
+            'Authorization': 'Bearer ' + apiKey,
+            'accept': 'application/json'
+        }
+    })
+    .then(function(response) {
         return response.json();
-      })
-      .then(function (data) {
+    })
+    .then(function(data) {
+        processMovieData(data);
+    })
+    .catch(function(error) {
+        console.error('Error fecthing now playing movies', error);
+    });
+};
+
+function processMovieData(data) {
+    var movieContainer = document.getElementById('movieContainer');
         
         for (var i = 0; i < 5; i++) {
             var movieCard = document.createElement('div');
             movieCard.classList.add('movie-card');
 
             var movieImage = document.createElement('img');
-            movieImage.setAttribute('src', data.movies_playing[i].image);
+            movieImage.setAttribute('src', 'https://image.tmdb.org/t/p/w300' + data.results[i].poster_path);
             movieCard.appendChild(movieImage);
 
             var movieName = document.createElement('h2');
-            movieName.textconjtent = data.movies_playing[i].name;
-            movieCard.appendChild.apply(movieName);
+            movieName.textContent = data.results[i].title;
+            movieCard.appendChild(movieName);
 
-            for (var j = 0; j < 3; j++) {
-                var extension = document.createElement('p');
-                extension.textContent = data.movies_playing[i].extensions[j];
-                movieCard.appendChild(extension);
-            }
+            var extension = document.createElement('p');
+            extension.textContent = 'Rating:' + data.results[i].vote_average;
+            movieCard.appendChild(extension);
 
             movieContainer.appendChild(movieCard);
         }
-      });
-};
+      };
 
 // JS Section to initialize form submittal and drive search function to variable storage.
 
@@ -86,7 +96,7 @@ var searchSubmit = function (event) {
     document.getElementById('history').appendChild(savedButton);
     document.getElementById('history').appendChild(para);
     
-    getApi(cityInput, movieInput); //replace this line with search API function from the next section
+    theaterTimes(cityInput, movieInput); //replace this line with search API function from the next section
 };
 
 function loadButtonsFromLocalStorage() {
@@ -113,8 +123,6 @@ function saveButtonsToLocalStorage (){
     localStorage.setItem('buttons', JSON.stringify(buttons));
 };
 
-<<<<<<< Updated upstream
-=======
 function theaterTimes() {
     var theaterTimesUrl = `https://serpapi.com/search.json?q=eternals+theater&location=${cityInput}+United+States&movie+name=${movieInput}&hl=en&gl=us&api_key=7c6118fdb3f3089d85b5fb869874edfac11e803bd3520e4f5d117c1a8a2e641e`;
     var theaterContainer = $('#search-results');
@@ -129,10 +137,9 @@ function theaterTimes() {
         };
 };
 
->>>>>>> Stashed changes
 document.querySelector('form').addEventListener('submit', searchSubmit);
 
-defaultPoster();
+getNowPlayingMovies();
 loadButtonsFromLocalStorage();
 
 });
