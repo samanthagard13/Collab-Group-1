@@ -18,62 +18,65 @@
         }
       }
     </style> -->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="./main.css/style.css" rel="stylesheet" />
     <title>Movie Barf</title>
   </head>
 
   <body class="font-Lato font-light font-bold">
-    <div>
+    <div class="py-20 my-10 mx-15">
+      
       <div class="py-lg-6 prose text-3xl">
         <h1 class="text-white text-right">Movie Barf</h1>
       </div>
+      <div>
+        <div id="form-container "class= "">
+          <form>
+            <div id="city-search" class="">
+              <label class="text-white text-2xl" for="city-search">City</label><br />
+              <input id="citySearchText" type="text"  placeholder="Enter Your City"/>
+              <br />
+            </div>
 
-      <div id="form-container "class= "py-20 my-20 m-[50px]">
-        <form>
-          <div id="city-search" class="">
-            <label class="text-white text-2xl" for="city">City</label><br />
-            <input id="citySearchText" type="text" class="form-input" placeholder="Enter Your City"/>
-            <br />
+            <div id="movie-name" class="my-5">
+              <label class="text-white text-2xl" for="movie-name">Movie</label><br />
+              <input id="movieSearchText" type="text" placeholder="Enter Movie Name"/>
+            </div>
+
+            <div class="">
+              <button class="btn border-2 rounded-full px-0 bg-white text-2xl" 
+                id="search-btn" type="submit">Search
+              </button>
+              </form>
+            </div>
           </div>
-
-          <div id="movie-name" class="">
-            <label class="text-white text-2xl" for="movie">Movie</label><br />
-            <input id="movieSearchText" type="text" class="form-input" placeholder="Enter Movie Name"/>
+      
+          <div id="history">
+                <!-- history rendered here via local storage -->
           </div>
 
           <div class="">
-            
-              <button class="btn border-2 rounded-full px-0 bg-white text-2xl" 
-              id="search-btn" type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-      
-        <div id="history">
+            <div class=" mt-5 space-y-20 flex flex-col items-center">
+              <div id="movieContainer" class="bg-white">
+                <!-- <div id="news-display">insert me cards here </div>
+              
+                 news display rendered here -->
+              
+              <!-- </div>  -->
 
-        </div>
-        <div class="">
-          <div class="space-y-20 flex flex-col items-center">
-            <div id="movieContainer" class="bg-white">
-              <div id="news-display"> insert me cards here </div>
-              <ul>
-              <!-- news display rendered here -->
-              </ul>
-            </div>
-
-            <div class="flex flex-col items-center">
-              <div class="">
-              <div class="bg-white whitespace-pre-line" id="search-results"> insert me cards here</div>
-              <ul>
-              <!-- search reults rendered here -->
-              </ul>
+              <div class="flex flex-col items-center">
+                <div class="">
+                <div class="bg-white" id="search-results">Theaters showing <span id="currentMovieEl"></span>in<span id="currentCityEl"></span></div>
+              
+                <!-- search reults rendered here -->
+              
+              </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
+    <script>src="./script.js"</script>
   </body>
 </html>
 
