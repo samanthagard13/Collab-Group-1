@@ -4,71 +4,65 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap"rel="stylesheet"/>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
-    <title>Movie Barf</title>
 
+    <title>Movie Barf</title>
   </head>
 
   <body>
     <div class="">
-      
       <div class="py-lg-6 prose text-8xl">
         <h1 class="my-10 mb-24 text-white text-center font-bold">Movie Barf</h1>
       </div>
 
-      <div class ="flex h-80 gap-x-80">
-        <div id="form-container "class= "my-8 ml-20 p-2 border rounded shadow">
+      <div class="flex h-80">
+        <div id="form-container " class="my-8 bg-white ml-20 p-1 border rounded shadow">
           <form>
-              <div id="city-search" class="mt-8">
-                <label class=" font-bold text-white text-2xl" for="city-search">City</label><br />
-                <input id="citySearchText" type="text"  placeholder="Enter Your City"/>
-                <br />
-              </div>
-
-              <div id="movie-name" class="my-10 mb-5">
-                <label class=" font-bold text-white text-2xl" for="movie-name">Movie</label><br />
-                <input id="movieSearchText" type="text" placeholder="Enter Movie Name"/>
-              </div>
-
-              <div class="">
-                <button class="btn  rounded-full w-20 bg-white text-2" 
-                  id="search-btn" type="submit">Search
-                </button>
-               </form>
-              </div>
-            </div>
-      
-            <div id="history">
-                <!-- history rendered here via local storage -->
+            <div id="city-search" class="p-1 mt-4">
+              <label class="font-bold text-black text-2xl" for="city-search">City</label><br />
+              <input id="citySearchText" class="p-1 border border-black" type="text" placeholder="Enter Your City"/>
+              <br />
             </div>
 
-          <div class="">
+            <div id="movie-name" class="p-1 my-5 mb-5">
+              <label class="font-bold text-black text-2xl" for="movie-name">Movie</label><br />
+              <input id="movieSearchText" class="p-1 border border-black" type="text" placeholder="Enter Movie Name"/>
+            </div>
+
             <div class="">
-              <div id="movieContainer" class="bg-white">
-                <!-- <div id="news-display">insert me cards here </div>
-              
-                 news display rendered here -->
-              
-              <!-- </div>  -->
-
-              <div class=" ">
-                <div class="">
-                <div class="bg-white" id="search-results">Theaters showing <span id="currentMovieEl"></span>in<span id="currentCityEl"></span></div> 
-              
-                <!-- search reults rendered here -->
-              
-              </div>
+              <button class="btn rounded-full w-20 bg-red-950 text-white text-2" id="search-btn" type="submit">Search</button>
             </div>
-          </div>
+          </form>
+        </div>
+
+        <div id="movieContainer" class="bg-white w-2/3 ml-10 p-3 my-6 justify-center border rounded shadow">
+          <!-- <div id="news-display">insert me cards here </div>
+                
+                   news display rendered here -->
         </div>
       </div>
+
+      <div class="flex h-80">
+        <div id="history" class="bg-white ml-20 mt-8 p-1 border rounded shadow">
+          <div class="font-bold p-1 text-2xl">Previous Searches</div>
+
+          <!-- history rendered here via local storage -->
+
+        </div>
+
+        <div
+          class="mt-10 bg-white my-8 ml-10 w-2/3 p-1 justify-center border rounded shadow"
+          id="search-results">Theaters Showing <span id="currentMovieEl"></span>in<span id="currentCityEl"></span>
+        </div>
+
+        <!-- search reults rendered here -->
+
+      </div>
     </div>
-    <script>src="./script.js"</script>
+
+    <script> src = "./script.js"</script>
   </body>
-</html> 
-
-
+</html>
