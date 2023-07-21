@@ -5,6 +5,9 @@ var movieInput = movieSearchEl.val();
 var buttons = [];
 var para = document.createElement('p');
 
+var currentCityEl = $('#currentCityEl');
+var currentMovieEl = $('#currentMovieEl');
+
 
 $(document).ready(function() {
 
