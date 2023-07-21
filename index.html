@@ -9,30 +9,52 @@
 
  
   <body>
-    <div>
-      <div class="py-lg-6 prose text-3xl">
-        <h1 class="text-red-500 text-right">Movie Barf</h1>
-      </div> 
-      <div class="container my-8 ">
-            <div class="row">
-                <div id="city-search">
-                    <label for="city">City</label><br>
-                    <input id="city" type="text" class="form-input" placeholder="Enter Your City" /><br>
-                </div>
-                <div id="movie-name">
-                    <label for="movie">Movie</label><br>
-                    <input id="movie" type="text" class="form-input" placeholder="Enter Movie Name" />
-                </div>
-                <div>
-                    <button class="btn" id="search-btn">search</button>
-                </div>
-                <div class=" gird grid-cols-9">
-                    <div id="card"></div>
-                    <div class="card-1"></div>
-                </div>
+    <div class="">
+      <div class="py-lg-6 prose text-8xl">
+        <h1 class="my-10 mb-24 text-white text-center font-bold">Movie Barf</h1>
+      </div>
+
+      <div class="flex h-80">
+        <div id="form-container " class="my-8 bg-white ml-20 p-1 border rounded shadow">
+          <form>
+
+            <div id="movie-name" class="p-1 my-5 mb-5">
+              <label class="font-bold text-black text-2xl" for="movie-name">Movie</label><br />
+              <input id="movieSearchText" class="p-1 border border-black" type="text" placeholder="Enter Movie Name"/>
             </div>
+
+            <div class="">
+              <button class="btn rounded-full w-20 bg-red-950 text-white text-2" id="search-btn" type="submit">Search</button>
+            </div>
+          </form>
         </div>
+
+        <div id="movieContainer" class="bg-white w-2/3 ml-10 p-3 my-6 justify-center border rounded shadow">
+          <!-- <div id="news-display">insert me cards here </div>
+                
+                   news display rendered here -->
+        </div>
+      </div>
+
+      <div class="flex h-80">
+        <div id="history" class="bg-white ml-20 mt-8 p-1 border rounded shadow">
+          <div class="font-bold p-1 text-2xl">Previous Searches</div>
+
+          <!-- history rendered here via local storage -->
+
+        </div>
+
+        <div
+          class="mt-10 bg-white my-8 ml-10 w-2/3 p-1 justify-center border rounded shadow"
+          id="search-results">
+        </div>
+
+        <!-- search reults rendered here -->
+
+      </div>
     </div>
+
+    <script src="./script.js"></script>
   </body>
 </html>
  
