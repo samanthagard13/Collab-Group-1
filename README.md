@@ -4,15 +4,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
 ## User story: 
 
 As a movie enthusiast, I want to easily find local movies and their showtimes, along with their ratings, so that I can plan my movie-watching experience effectively.
