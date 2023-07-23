@@ -1,2 +1,31 @@
+.movie-container {
+    display: flex; 
+ justify-content: space-between;
+}
+
+.movie-card img {
+    height: 240px;
+    flex-direction: row;
+    padding: 15px;
+}
+
+.movie-card h2 {
+    text-decoration: underline;
+}
+
+.movie-card p {
+    font-weight: bold;
+}
+
+.history-button {
+    background-color: rgb(90, 18, 18);
+    border-radius: 25px;
+    padding: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-left: 5px;
+    color: white;
+    margin-top: 5px;
+}
 
 

@@ -31,11 +31,13 @@ function getNowPlayingMovies() {
 
 // Processes the API call data into dynamic posters to show i posters
 function processMovieData(data) {
-    var movieContainer = document.getElementById('movieContainer');
-        
+    
         for (var i = 0; i < 5; i++) {
+            var movieContainer = document.getElementById('movieContainer');
             var movieCard = document.createElement('div');
+            
             movieCard.classList.add('movie-card');
+            movieContainer.appendChild(movieCard);
 
             var movieImage = document.createElement('img');
             movieImage.setAttribute('src', 'https://image.tmdb.org/t/p/w200' + data.results[i].poster_path);
@@ -46,10 +48,9 @@ function processMovieData(data) {
             movieCard.appendChild(movieName);
 
             var extension = document.createElement('p');
-            extension.textContent = 'Rating:' + data.results[i].vote_average;
+            extension.textContent = 'Rating: ' + data.results[i].vote_average + " %";
             movieCard.appendChild(extension);
-
-            movieContainer.appendChild(movieCard);
+  
         }
       };
 
