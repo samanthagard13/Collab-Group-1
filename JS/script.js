@@ -32,7 +32,7 @@ function getNowPlayingMovies() {
 // Processes the API call data into dynamic posters to show i posters
 function processMovieData(data) {
     
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < 10; i++) {
             var movieContainer = document.getElementById('movieContainer');
             var movieCard = document.createElement('div');
             
@@ -63,6 +63,7 @@ var searchSubmit = function (event) {
     currentMovieEl.text(movieInput);
     // Add dynamic button creation with each search with btn functionality to be searched
     var savedButton = document.createElement('button');
+    savedButton.classList.add('history-button');
     savedButton.textContent = movieInput;
 
     //Reloads input text

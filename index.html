@@ -14,14 +14,14 @@
     <title>Movie Barf</title>
   </head>
 
-  <body>
+  <body class="mb-5">
     <div class="">
       <div class="py-lg-6 prose text-8xl">
-        <h1 class="my-10 mb-20 text-white text-center">Movie Barf</h1>
+        <h1 class="my-10 mb-18 text-white text-center">Movie Barf</h1>
       </div>
 
       <div class="flex h-80">
-        <div id="form-container " class="my-12 bg-white ml-20 p-1 border rounded shadow">
+        <div id="form-container " class="my-8 bg-white ml-20 p-1 border rounded shadow">
           <form>
 
             <div id="movie-name" class="p-1 my-5 mb-3">
@@ -35,7 +35,7 @@
           </form>
         </div>
 
-        <div id="movieContainer" class="bg-white h-80 w-2/3 ml-12 flex-row p-3 my-4 border rounded shadow movie-container">
+        <div id="movieContainer" class="bg-white w-2/3 ml-12 flex-row p-3 my-4 border rounded shadow movie-container overflow-scroll">
           <!-- <div id="news-display">insert me cards here </div>
                 
                    news display rendered here -->
@@ -43,15 +43,15 @@
       </div>
 
       <div class="flex mt-5 h-80">
-        <div id="history" class="bg-white h-70 ml-20 mt-5 p-1 border rounded shadow">
+        <div id="history" class="bg-white h-70 ml-20 mt-1 p-1 border rounded shadow overflow-scroll">
           <div class="font-bold p-1 text-2xl">Previous Searches</div>
 
           <!-- history rendered here via local storage -->
 
         </div>
-
+        <br>
         <div
-          class="mt-10 bg-white my-8 h-70 ml-10 w-2/3 p-4 justify-center border rounded shadow overflow-scroll"
+          class="mt-20 bg-white my-8 h-75 ml-10 w-2/3 p-4 border rounded shadow overflow-scroll"
           id="search-results">
         </div>
 
