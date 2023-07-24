@@ -1,20 +1,35 @@
 .movie-container {
     display: flex; 
- justify-content: space-between;
+    overflow-x: auto;
+    white-space: nowrap;
+    height: 24em;
+}
+
+.movie-card {
+    min-width: 200px;
+    padding: 2px;
+    margin-right: 10px;
 }
 
 .movie-card img {
-    height: 240px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
     flex-direction: row;
-    padding: 15px;
+    padding: 5px;
 }
 
 .movie-card h2 {
     text-decoration: underline;
+    white-space: nowrap;
+    margin: 2px;
+    text-align: center;
 }
 
 .movie-card p {
     font-weight: bold;
+    margin: 2px;
+    text-align: center;
 }
 
 .history-button {
