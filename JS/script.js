@@ -75,6 +75,10 @@ var searchSubmit = function (event) {
     buttons.push(movieInput);
     saveButtonsToLocalStorage();
 
+    var para = document.createElement('p');
+    para.appendChild(savedButton);
+    document.getElementById('history').appendChild(para);
+
     document.getElementById('history').appendChild(savedButton);
     document.getElementById('history').appendChild(para);
     
@@ -110,7 +114,7 @@ function saveButtonsToLocalStorage (){
 
 // API call to get movie plot from OMDB, based on search or by clicking saved history button
 function getMoviePlot(title) {
-    var moviePlotUrl = `http://www.omdbapi.com/?apikey=d9732be9&t=${title}&plot=full`;
+    var moviePlotUrl = `https://www.omdbapi.com/?apikey=d9732be9&t=${title}&plot=full`;
     var theaterContainer = $('#search-results');
 
     fetch(moviePlotUrl, {
